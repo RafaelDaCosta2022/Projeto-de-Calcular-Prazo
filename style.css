@@ -1,0 +1,98 @@
+input[type="date"], input[type="number"] {
+    width: 300px;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px 10px 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(67, 67, 67);
+    color: #fff;
+    cursor: pointer;
+    
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(79, 214, 205);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#res{
+    font-size: 35px;
+    font-style: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#novo, #btn{
+    margin: 10px;
+    font-size: 18px;
+    border: 10px solid 5px;
+    display: inline-block;
+   
+}
+
+input {
+    margin: 10px;
+    font-size: 18px;
+    border: 10px solid 5px;
+}
+#res2{
+   font-size: 10px;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(79, 214, 205);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#res{
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#btn, #novo {
+    margin: 10px;
+    font-size: 18px;
+    border: 10px solid 5px;
+}
+
+input {
+    margin: 10px;
+    font-size: 18px;
+    border: 10px solid 5px;
+}
+verde{
+    background-color: chartreuse;
+}
