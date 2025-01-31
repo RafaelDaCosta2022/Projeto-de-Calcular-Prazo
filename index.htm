@@ -1,72 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <title>Prazo</title>
+    <title>Calculadora de Datas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   
-            <input type="date" id="ini" size="60" /><br><br>
-            <input onchange="calculater();" name="dias" type="number" id="dias" min="1" max="99" size="60" placeholder="Dias:" /><br><br>
-        </form>
-        <br>
-        <button id="btn">Enviar</button>   <br>
-        <button onclick="novo()">Novo</button>   
+    <div class="container">
+        <h1>Calculadora de Datas</h1>
+
+        <!-- Campo de Data Inicial -->
+        <div class="input-group">
+            <label for="dataInicial"><i class="fas fa-calendar-alt"></i> Data Inicial:</label>
+            <input type="date" id="dataInicial" required>
+           
+        </div>
+
+        <!-- Campo de Dias a Adicionar -->
+        <div class="input-group">
+            <label for="diasAdicionais"><i class="fas fa-plus"></i> Dias a Adicionar:</label>
+            <input type="number" id="diasAdicionais" placeholder="Ex: 38" required>
+        </div>
+
+        <!-- Botão de Calcular -->
+        <button onclick="calcularData()">Calcular</button>
+
+        <!-- Resultado -->
+        <div class="resultado-group">
+            <label for="resultado"><i class="fas fa-clock"></i> Resultado:</label>
+            <input type="text" id="resultado" readonly>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="button-group">
+            <button onclick="copiarResultado()"><i class="fas fa-copy"></i> Copiar Resultado</button>
+            <button onclick="limparCampos()"><i class="fas fa-eraser"></i> Limpar</button>
+        </div>
     </div>
-    <br>
-    <div id="res" style="text-align: center;"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-<script>
-   function calculater() {
-       var inicial = document.getElementById("ini").value;
-       var dias = parseInt(document.getElementById("dias").value);
-       if (inicial=== '') {
-           return;
-       }
-
-       
-
-       var partes = inicial.split("-");
-       var ano = partes[0];
-       var mes = partes[1] - 1;
-       var dia = partes[2];
-       inicial = new Date(ano, mes, dia);
-       final = new Date(inicial);
-       final.setDate(final.getDate() + dias);
-       var dd = ("0" + final.getDate()).slice(-2);
-       var mm = ("0" + (final.getMonth() + 1)).slice(-2);
-       var y = final.getFullYear();
-       var dataformatada = dd + '-' + mm + '-' + y;
-       let mostra = document.querySelector('#res').innerHTML = `Data final: ${dd}/${mm}/${y}`;
-
-       if(mostra){
-  var copyBtn = document.createElement("button");
-  copyBtn.innerHTML = "Copy";
-  copyBtn.onclick = function() {
-    var textarea = document.createElement("textarea");
-    textarea.value = dataformatada;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-    
-    
-    copyBtn.style.backgroundColor='green'
-    
-  };
-  document.getElementById("res").appendChild(copyBtn);
-}
-   }
-
-   function novo() {
-  document.querySelector("#dias").value = "";
-  document.querySelector("#ini").value = "";
-  document.querySelector("#res").innerHTML = "";
-}
-
-</script>
