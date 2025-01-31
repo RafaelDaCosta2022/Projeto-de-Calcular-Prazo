@@ -1,98 +1,147 @@
-input[type="date"], input[type="number"] {
-    width: 300px;
-    height: 40px;
-    font-size: 18px;
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    color: #00ffcc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #00ffcc;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.6), 0 0 40px rgba(0, 255, 204, 0.4);
+    text-align: center;
+    width: 350px;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 255, 204, 0.6), 0 0 40px rgba(0, 255, 204, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 255, 204, 0.8), 0 0 60px rgba(0, 255, 204, 0.6);
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+    100% {
+        text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+    }
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc;
+}
+
+.input-group input {
+    width: 100%;
     padding: 10px;
-    margin: 10px;
-    
+    border: 2px solid #00ffcc;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #00ffcc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ff00cc;
+    box-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc;
 }
 
 button {
-    width: 150px;
-    height: 40px;
-    font-size: 18px;
+    width: 100%;
     padding: 10px;
-    margin: 10px 10px 10px 15px;
+    background: linear-gradient(135deg, #00ffcc, #ff00cc);
+    color: #000;
     border: none;
     border-radius: 5px;
-    background-color: rgb(67, 67, 67);
-    color: #fff;
-    cursor: pointer;
-    
-}
-body {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-   
-}
-
-body {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(79, 214, 205);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#res{
-    font-size: 35px;
-    font-style: bold;
-    text-align: center;
-    margin-bottom: 15px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#novo, #btn{
-    margin: 10px;
-    font-size: 18px;
-    border: 10px solid 5px;
-    display: inline-block;
-   
-}
-
-input {
-    margin: 10px;
-    font-size: 18px;
-    border: 10px solid 5px;
-}
-#res2{
-   font-size: 10px;
-}
-body {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(79, 214, 205);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#res{
-    font-size: 35px;
+    font-size: 1.1rem;
     font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff00cc, 0 0 30px #ff00cc;
+}
+
+.resultado-group {
+    margin-top: 20px;
+}
+
+.resultado-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc;
+}
+
+.resultado-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #00ffcc;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #00ffcc;
+    font-size: 1rem;
+    outline: none;
     text-align: center;
 }
 
-#btn, #novo {
-    margin: 10px;
-    font-size: 18px;
-    border: 10px solid 5px;
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-input {
-    margin: 10px;
-    font-size: 18px;
-    border: 10px solid 5px;
+.button-group button {
+    flex: 1;
 }
-verde{
-    background-color: chartreuse;
+
+/* Estilizando o ícone do calendário no input de data */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.8) sepia(1) saturate(5) hue-rotate(100deg); /* Ajuste a cor para verde neon */
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(100deg); /* Efeito hover para o ícone */
 }
