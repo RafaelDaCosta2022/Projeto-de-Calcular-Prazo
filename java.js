@@ -1,14 +1,28 @@
-import java.util.Random;
+function calcularData() {
+    const dataInicial = document.getElementById('dataInicial').value;
+    const diasAdicionais = parseInt(document.getElementById('diasAdicionais').value);
 
-public class RandomNumbers {
-    public static void main(String[] args) {
-        Random random = new Random();
-        int[] randomNumbers = new int[6];
-        for (int i = 0; i < randomNumbers.length; i++) {
-            randomNumbers[i] = random.nextInt(60) + 1;
-        }
-        for (int num : randomNumbers) {
-            System.out.print(num + " ");
-        }
+    if (!dataInicial || isNaN(diasAdicionais)) {
+        alert('Por favor, preencha todos os campos corretamente.');
+        return;
     }
+
+    const data = new Date(dataInicial);
+    data.setDate(data.getDate() + diasAdicionais);
+
+    const resultado = data.toLocaleDateString('pt-BR');
+    document.getElementById('resultado').value = resultado;
+}
+
+function copiarResultado() {
+    const resultado = document.getElementById('resultado');
+    resultado.select();
+    document.execCommand('copy');
+    alert('Resultado copiado para a área de transferência!');
+}
+
+function limparCampos() {
+    document.getElementById('dataInicial').value = '';
+    document.getElementById('diasAdicionais').value = '';
+    document.getElementById('resultado').value = '';
 }
